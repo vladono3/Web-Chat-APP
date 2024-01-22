@@ -1,18 +1,36 @@
 import { useLogin } from "./login-provider";
+import ChatList from "./chat-app-discussion-chatlist";
+import { useState, useEffect } from "react";
+import { USER_ID } from "../constants/constants";
+import { API,CONTACTS_ENDPOINT } from "../constants/constants";
+
+async function fetchDiscussions() {
+  const response = await fetch(`${API}${CONTACTS_ENDPOINT}`)
+  const data = await response.json()
+  return data
+}
+
 export default function ChatDiscussions() {
-  const { isLoggedIn, login, logout } = useLogin();
+  const [discussions, setDiscussions] = useState([])
+  const { isLoggedIn } = useLogin()
+
+  async function loadDiscussions() {
+    const data = await fetchDiscussions()
+    setDiscussions(data)
+  }
+  useEffect(() => {
+    loadDiscussions()
+  }, [])
+
   return (
       <>
-        {isLoggedIn ? <div>
-          <ul title="Discussions">
-            <li>User 1</li>
-            <li>User 2</li>
-            <li>User 3</li>
-            <li>User 4</li>
-            <li>User 5</li>
-          </ul>
-          </div>
-        : <h1>LOG IN First!</h1>}
+        {isLoggedIn ? 
+        <div className="m-2 overflow-auto">
+          {discussions.map((discussion) =>(
+            <ChatList userName={discussion.name}/>
+          ))}
+        </div>
+        : <></>}
       </>
   )
 }

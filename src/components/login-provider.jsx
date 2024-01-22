@@ -11,14 +11,17 @@ export const useLogin = () => {
 };
 
 export const LoginProvider = ({ children }) => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const initialLoggedInState = localStorage.getItem('isLoggedIn') === 'true';
+  const [isLoggedIn, setLoggedIn] = useState(initialLoggedInState);
 
   const login = () => {
     setLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
   };
 
   const logout = () => {
     setLoggedIn(false);
+    localStorage.removeItem('isLoggedIn');
   };
 
   return (

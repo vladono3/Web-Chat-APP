@@ -5,10 +5,12 @@ import { Badge, Table } from '@mantine/core'
 import { API,CONTACTS_ENDPOINT } from '../constants/constants';
 import { useLogin } from './login-provider';
 
+const self_API = 'http://0.0.0.0:8000/api/contacts'
 
 async function fetchContacts() {
   const response = await fetch(`${API}${CONTACTS_ENDPOINT}`)
   const data = await response.json()
+  console.log(data)
   return data
 }
 

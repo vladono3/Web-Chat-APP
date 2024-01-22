@@ -7,7 +7,6 @@ export function ChatMessage({ value, userName, isMe }) {
         <Avatar color={isMe ? 'blue' : 'red'} size="lg" className="mr-4">
           {userName.charAt(0).toUpperCase()}
         </Avatar>
-
         {value}
       </div>
     </div>

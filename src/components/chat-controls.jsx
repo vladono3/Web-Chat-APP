@@ -1,7 +1,6 @@
 import { Button } from '@mantine/core'
 import { Newchatmodal } from './chat-app-newchat'
 import { AuthenticationForm } from './chat-login'
-import { ChatSettings } from './chat-settings'
 import { ChatDiscussionsModal } from './chat-discussions-modal'
 
 
