@@ -5,9 +5,12 @@ export default {
     extend: {
     },
     colors :{
-      'custom-color' : '#1F2833',
+      'custom-color' : '#092635',
+      //'custom-color' : '#FFFFFF',
       'navbar-color' : '#66FCF1',
       'avatar-color' : '#757575',
+      'discussions-color' : '#FFFFFF',
+      'discussions-text-color' : '#000000',
       'white' : '#ffffff'
     }
   },
