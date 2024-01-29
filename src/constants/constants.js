@@ -7,7 +7,11 @@ export const CONTACTS_ENDPOINT = '/contacts'
 export const CONTACT_ENDPOINT = '/contacts'
 export const MESSAGES_ENDPOINT = '/messages'
 export const AUTHENTICATE = '/authenticate'
-export const WEBOSCKETS = 'ws://localhost:8000/ws'
+export const WEBSOSCKETS = 'ws://localhost:8000/ws'
 
-export const USER_ID = 'd85045b4-b82d-45ba-8104-92c340fe371a'
 
+//Vlad
+export const USER_ID = '9a75222d-eca7-410a-913e-8f16a8fe92e4'
+
+//David
+//export const USER_ID = '9bbd0a31-a919-4afa-89a5-d9f2a08c8493'

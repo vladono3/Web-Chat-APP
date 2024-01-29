@@ -11,9 +11,9 @@ export const useLogin = () => {
 };
 
 export const LoginProvider = ({ children }) => {
-  const initialLoggedInState = localStorage.getItem('isLoggedIn') === 'true';
+  const initialLoggedInState = localStorage.getItem('isLoggedIn') === 'false';
   const [isLoggedIn, setLoggedIn] = useState(initialLoggedInState);
-
+  
   const login = () => {
     setLoggedIn(true);
     localStorage.setItem('isLoggedIn', 'true');
